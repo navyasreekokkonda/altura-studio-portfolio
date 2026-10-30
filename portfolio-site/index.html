@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Altura Studio – Brand, web and product design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="Altura Studio home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20 9 6l4 7 3-4 6 11z" fill="var(--blue)"/></svg>Altura Studio</a>
+  <nav aria-label="Primary"><ul><li><a href="#work">Work</a></li><li><a href="#capabilities">Capabilities</a></li><li><a href="#praise">Clients</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+  <div class="nav-right">
+   <button class="icon-btn" id="theme" aria-label="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+   <a class="btn" href="#contact">Start a project</a>
+  </div>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="wrap">
+  <h1>Design that makes hard things easy to climb.</h1>
+  <p class="lead">Altura is an independent studio. We shape brands, websites and products for teams that need clarity before launch day.</p>
+  <div class="cta"><a class="btn" href="#work">See our work</a><a class="btn ghost" href="#contact">Book an intro call</a></div>
+ </div>
+ <svg class="ridge ridge-load" id="ridge" viewBox="0 0 1200 360" preserveAspectRatio="none" role="img" aria-label="Layered mountain ridgeline">
+  <g data-d="10"><path class="l1" d="M0 200 120 130 230 190 360 90 500 180 640 110 780 200 920 100 1060 170 1200 120V360H0z"/></g>
+  <g data-d="20"><path class="l2" d="M0 240 150 170 280 230 420 150 560 235 700 160 850 240 1000 165 1130 215 1200 190V360H0z"/></g>
+  <g data-d="34"><path class="l3" d="M0 285 100 235 240 285 380 215 520 285 660 225 800 290 950 225 1080 280 1200 250V360H0z"/></g>
+  <g data-d="50"><path class="l4" d="M0 330 140 295 290 335 450 290 600 335 760 295 920 338 1070 300 1200 328V360H0z"/></g>
+ </svg>
+</div>
+
+<section id="work">
+ <div class="wrap">
+  <div class="head">
+   <h2>Selected work</h2>
+   <div class="filters" role="group" aria-label="Filter projects">
+    <button class="chip" aria-pressed="true" data-f="all">All</button>
+    <button class="chip" aria-pressed="false" data-f="Brand">Brand</button>
+    <button class="chip" aria-pressed="false" data-f="Web">Web</button>
+    <button class="chip" aria-pressed="false" data-f="Product">Product</button>
+   </div>
+  </div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section id="capabilities" style="background:var(--surface)">
+ <div class="wrap caps">
+  <div>
+   <h2>What we do, start to finish</h2>
+   <p class="lead" style="margin-top:1.2rem">One small team handles strategy, design and build, so decisions don’t get lost between handoffs.</p>
+  </div>
+  <div>
+   <details open><summary>Brand identity</summary><p>Naming, logo systems, voice and guidelines. We deliver a kit your team can use on day one, not a PDF that sits in a folder.</p></details>
+   <details><summary>Websites and web apps</summary><p>Responsive, accessible sites built in clean code. Fast on mobile, easy to edit, and ready for launch with analytics and SEO in place.</p></details>
+   <details><summary>Product design</summary><p>Research, flows, prototypes and design systems for mobile and web products, tested with real users before anything ships.</p></details>
+   <details><summary>Content and motion</summary><p>Case studies, launch pages and short product films that explain what you do in plain language.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="quotes" id="praise">
+ <div class="wrap">
+  <h2>Kind words from clients</h2>
+  <blockquote id="q" aria-live="polite"></blockquote>
+  <div class="who">
+   <div><strong id="qn"></strong><small id="qr"></small></div>
+   <div style="display:flex;gap:1rem;align-items:center">
+    <div class="dots" id="dots" role="group" aria-label="Choose testimonial"></div>
+    <button class="icon-btn" id="prev" aria-label="Previous testimonial">‹</button>
+    <button class="icon-btn" id="next" aria-label="Next testimonial">›</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap contact">
+  <div>
+   <h2>Tell us what you’re building</h2>
+   <p class="lead" style="margin-top:1.2rem">Share a few details and we’ll reply within two working days with next steps and a rough timeline.</p>
+   <p style="margin-top:1.6rem"><a href="mailto:hello@alturastudio.example">hello@alturastudio.example</a></p>
+  </div>
+  <form id="form" novalidate>
+   <label>Name<input name="name" autocomplete="name" required><span class="err" data-for="name"></span></label>
+   <label>Email<input name="email" type="email" autocomplete="email" required><span class="err" data-for="email"></span></label>
+   <label>Project type<select name="type"><option>Brand</option><option>Web</option><option>Product</option><option>Not sure yet</option></select></label>
+   <label>Project details<textarea name="msg" required></textarea><span class="err" data-for="msg"></span></label>
+   <button class="btn" type="submit">Send message</button>
+   <div id="status" role="status"></div>
+  </form>
+ </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Altura Studio</span><span>Built with PeaklyyXProjects</span></div></footer>
+
+<dialog id="dlg" aria-labelledby="dt"><div class="dlg" id="dbody"></div></dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
